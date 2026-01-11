@@ -125,22 +125,16 @@
             <div id="ai" class="tab-content">
                 <div class="bg-charcoal text-white p-8 rounded-xl">
                     <h3 class="font-serif text-2xl mb-4 text-sand">מחולל רעיונות לקורסים (AI)</h3>
-                    <p class="text-sm mb-6">ה-AI מחובר למערכת ויכול להציע לך סילבוס או רעיון לסטורי.</p>
                     <textarea class="w-full bg-white/10 p-4 rounded mb-4 border border-white/20" rows="4" placeholder="למשל: תכתוב לי 3 רעיונות לסטורי שיווקי לקורס שפתיים..."></textarea>
                     <button class="bg-sand text-charcoal px-8 py-3 font-bold rounded">ייצר רעיון</button>
                 </div>
             </div>
-
         </div>
     </div>
 
     <script>
-        // Preloader
-        window.onload = () => { 
-            setTimeout(() => document.getElementById('preloader').style.display = 'none', 1000); 
-        };
+        window.onload = () => { setTimeout(() => document.getElementById('preloader').style.display = 'none', 1000); };
 
-        // Admin Auth
         function openLogin() {
             Swal.fire({
                 title: 'כניסת מנהלת',
@@ -162,7 +156,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Tabs Logic
         function showTab(id) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.add('text-gray-400', 'border-transparent'));
