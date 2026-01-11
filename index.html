@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>OFIR SWISA | אקדמיה לאיפור קבוע וניהול ביוטי</title>
-    <meta name="description" content="אופיר סוויסה - אקדמיה ללימודי איפור קבוע, שיטת השערה ועיצוב גבות. ניהול מקצועי ורעיונות AI לעסק שלך.">
-    <meta name="keywords" content="אופיר סוויסה, איפור קבוע, שיטת השערה, קורס איפור קבוע, עיצוב גבות, אקוורל שפתיים">
+    <title>OFIR SWISA | Beauty Academy & Admin</title>
+    <meta name="description" content="אופיר סוויסה - אקדמיה לאיפור קבוע, עיצוב גבות וניהול קריירה ביוטי.">
+    <meta name="keywords" content="אופיר סוויסה, איפור קבוע, שיטת השערה, קורס גבות, אקוורל שפתיים">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -26,7 +26,7 @@
     </script>
     <style>
         body { background-color: #F9F9F9; color: #1A1A1A; overflow-x: hidden; scroll-behavior: smooth; }
-        .couture-img { transition: transform 0.8s ease; filter: grayscale(100%); }
+        .couture-img { transition: transform 0.8s ease; filter: grayscale(30%); }
         .couture-card:hover .couture-img { transform: scale(1.05); filter: grayscale(0%); }
         .admin-panel { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 1000; overflow-y: auto; }
         .tab-content { display: none; }
@@ -37,26 +37,29 @@
 <body class="font-sans">
 
     <div id="preloader">
-        <h1 class="font-serif text-4xl text-sand animate-pulse tracking-widest uppercase">OFIR SWISA</h1>
+        <h1 class="font-serif text-4xl text-sand animate-pulse tracking-widest uppercase text-center">OFIR SWISA<br><span class="text-xs">ACADEMY</span></h1>
     </div>
 
     <nav class="fixed w-full z-50 px-8 py-5 flex justify-between items-center bg-white/90 backdrop-blur-md border-b">
         <div class="flex flex-col">
-            <span class="font-serif text-2xl tracking-tighter">OFIR SWISA</span>
+            <span class="font-serif text-2xl tracking-tighter uppercase">Ofir Swisa</span>
             <span class="text-[10px] tracking-[0.3em] text-gray-400 uppercase">Beauty Academy</span>
         </div>
         <div class="hidden md:flex gap-8 text-xs font-bold uppercase items-center">
             <a href="#collection" class="hover:text-sand transition">Treatments</a>
-            <button onclick="openLogin()" class="bg-charcoal text-white px-5 py-2 hover:bg-sand hover:text-charcoal transition">PORTAL LOGIN</button>
+            <button onclick="openLogin()" class="bg-charcoal text-white px-5 py-2 hover:bg-sand hover:text-charcoal transition uppercase tracking-widest">Login</button>
         </div>
     </nav>
 
     <header class="min-h-screen flex items-center px-6 md:px-24 pt-20">
         <div class="grid md:grid-cols-2 gap-12 items-center w-full">
             <div>
-                <h1 class="font-serif text-6xl md:text-8xl mb-6">THE NEW<br><span class="italic text-sand">STANDARD.</span></h1>
-                <p class="text-xl text-gray-500 mb-8 max-w-md">אקדמיה מובילה לאמנות היופי. קורסים מקצועיים, ניהול תלמידות וחדשנות טכנולוגית.</p>
-                <a href="tel:0502060849" class="border border-charcoal px-10 py-4 inline-block font-bold text-xs tracking-widest hover:bg-charcoal hover:text-white transition">LET'S CONNECT</a>
+                <h1 class="font-serif text-6xl md:text-8xl mb-6">THE NEW<br><span class="italic text-sand">ARTISTRY.</span></h1>
+                <p class="text-xl text-gray-500 mb-8 max-w-md">עיצוב פנים בסטנדרט גבוה. האקדמיה של אופיר סוויסה מזמינה אותך לשדרג את הקריירה שלך עם הטכניקות המובילות בעולם.</p>
+                <div class="flex gap-4">
+                    <a href="tel:0502060849" class="border border-charcoal px-10 py-4 font-bold text-xs tracking-widest hover:bg-charcoal hover:text-white transition uppercase">Book Now</a>
+                    <a href="#collection" class="bg-charcoal text-white px-10 py-4 font-bold text-xs tracking-widest hover:bg-sand hover:text-charcoal transition uppercase">Academy</a>
+                </div>
             </div>
             <div class="h-[65vh] overflow-hidden shadow-2xl relative">
                 <img src="hero-brows.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-1000" alt="Brows">
@@ -64,30 +67,35 @@
         </div>
     </header>
 
-    <section id="collection" class="py-24 px-6 md:px-24 bg-white">
+    <section id="collection" class="py-32 px-6 md:px-24 bg-white">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+            <h2 class="font-serif text-5xl">The Academy Collection</h2>
+            <p class="text-xs font-bold tracking-[0.2em] uppercase text-gray-400">Professional Training & Treatments</p>
+        </div>
+
         <div class="grid md:grid-cols-3 gap-10">
-            <div class="couture-card group">
-                <div class="overflow-hidden h-[400px] mb-6">
+            <div class="couture-card group cursor-pointer">
+                <div class="overflow-hidden h-[450px] mb-6">
                     <img src="3008.jpg" class="couture-img w-full h-full object-cover">
                 </div>
-                <h3 class="font-serif text-2xl">Microblading</h3>
-                <p class="text-sm text-gray-400 mt-2">שיטת השערה המדויקת של אופיר סוויסה.</p>
+                <h3 class="font-serif text-2xl">Microblading Expert</h3>
+                <p class="text-sm text-gray-500 border-t border-gray-100 pt-4 mt-4 leading-relaxed">שיטת השערה המדויקת ביותר. קורסים למתחילות ומתקדמות באקדמיה.</p>
             </div>
-            <div class="couture-card group md:mt-12">
-                <div class="overflow-hidden h-[400px] mb-6">
-                    <img src="3011.jpg" class="couture-img w-full h-full object-cover">
-                </div>
-                <h3 class="font-serif text-2xl">Lash Lift</h3>
-                <p class="text-sm text-gray-400 mt-2">הרמת ריסים טבעית למבט עוצמתי.</p>
-            </div>
-            <div class="couture-card group">
-                <div class="overflow-hidden h-[400px] mb-6">
+            <div class="couture-card group cursor-pointer md:mt-12">
+                <div class="overflow-hidden h-[450px] mb-6">
                     <video autoplay muted loop playsinline class="couture-img w-full h-full object-cover">
                         <source src="lips-final.mp4" type="video/mp4">
                     </video>
                 </div>
-                <h3 class="font-serif text-2xl">Premium Lips</h3>
-                <p class="text-sm text-gray-400 mt-2">פיגמנט שפתיים בטכניקה בלעדית.</p>
+                <h3 class="font-serif text-2xl">Aquarelle Lips</h3>
+                <p class="text-sm text-gray-500 border-t border-gray-100 pt-4 mt-4 leading-relaxed">טכניקת השפתיים הבלעדית שלנו. יצירת פיגמנט טבעי ומושלם.</p>
+            </div>
+            <div class="couture-card group cursor-pointer">
+                <div class="overflow-hidden h-[450px] mb-6">
+                    <img src="3011.jpg" class="couture-img w-full h-full object-cover">
+                </div>
+                <h3 class="font-serif text-2xl">Lash & Brow Lift</h3>
+                <p class="text-sm text-gray-500 border-t border-gray-100 pt-4 mt-4 leading-relaxed">הרמת ריסים ועיצוב גבות בסטנדרט בינלאומי.</p>
             </div>
         </div>
     </section>
@@ -96,38 +104,37 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-center border-b pb-8 mb-8">
                 <div>
-                    <h2 class="font-serif text-3xl" id="panelTitle">שלום, אופיר</h2>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest" id="panelSub">Academy Manager</p>
+                    <h2 class="font-serif text-4xl" id="panelTitle">שלום, אופיר</h2>
+                    <p class="text-xs text-gray-400 uppercase tracking-[0.4em]" id="panelSub">Academy Control Center</p>
                 </div>
-                <button onclick="closeAdmin()" class="bg-red-500 text-white px-6 py-2 rounded-full text-xs font-bold">LOGOUT</button>
+                <button onclick="closeAdmin()" class="bg-red-500 text-white px-8 py-2 rounded-full text-xs font-bold tracking-widest hover:bg-red-600 transition">LOGOUT</button>
             </div>
 
-            <div class="flex gap-6 mb-8 border-b overflow-x-auto pb-2" id="adminTabs">
-                <button onclick="showTab('leads')" class="tab-btn font-bold text-sm pb-2 border-b-2 border-charcoal">לידים והודעות</button>
-                <button onclick="showTab('content')" class="tab-btn font-bold text-sm pb-2 text-gray-400">ניהול תוכן</button>
-                <button onclick="showTab('ai')" class="tab-btn font-bold text-sm pb-2 text-gray-400">רעיונות (AI)</button>
+            <div class="flex gap-8 mb-10 border-b overflow-x-auto pb-4" id="adminTabs">
+                <button onclick="showTab('leads')" class="tab-btn font-bold text-sm tracking-tighter border-b-2 border-charcoal">לידים והודעות</button>
+                <button onclick="showTab('content')" class="tab-btn font-bold text-sm text-gray-400 tracking-tighter">ניהול תוכן</button>
+                <button onclick="showTab('ai')" class="tab-btn font-bold text-sm text-gray-400 tracking-tighter italic font-serif">AI Creative Engine</button>
             </div>
 
             <div id="leads" class="tab-content active">
-                <h3 class="font-bold mb-6">נרשמות חדשות (לידים)</h3>
-                <div class="bg-white border rounded-xl overflow-hidden shadow-sm">
+                <div class="bg-white border rounded-2xl overflow-hidden shadow-sm">
                     <table class="w-full text-right text-sm">
-                        <thead class="bg-gray-50 border-b font-bold">
+                        <thead class="bg-gray-50 border-b">
                             <tr>
-                                <th class="p-4">שם</th>
-                                <th class="p-4">טלפון</th>
-                                <th class="p-4">קורס מבוקש</th>
-                                <th class="p-4">פעולות</th>
+                                <th class="p-5 font-bold">שם המועמדת</th>
+                                <th class="p-5 font-bold">טלפון</th>
+                                <th class="p-5 font-bold">עניין בקורס</th>
+                                <th class="p-5 font-bold">סטטוס</th>
+                                <th class="p-5 font-bold">פעולה</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b">
-                                <td class="p-4">מעיין לוי</td>
-                                <td class="p-4">052-1234567</td>
-                                <td class="p-4">שיטת השערה</td>
-                                <td class="p-4">
-                                    <button onclick="window.open('https://wa.me/972521234567')" class="bg-green-500 text-white px-3 py-1 rounded text-[10px]">WhatsApp</button>
-                                </td>
+                            <tr class="border-b hover:bg-gray-50 transition">
+                                <td class="p-5 font-medium">מעיין לוי</td>
+                                <td class="p-5 tracking-widest">052-1234567</td>
+                                <td class="p-5">קורס מיקרובליידינג</td>
+                                <td class="p-5"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-bold">חדש</span></td>
+                                <td class="p-5"><button onclick="window.open('https://wa.me/972521234567')" class="bg-green-500 text-white p-2 rounded-lg"><i class="fab fa-whatsapp"></i></button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -136,45 +143,38 @@
 
             <div id="content" class="tab-content">
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-offwhite p-8 rounded-xl border border-dashed border-gray-300">
-                        <h4 class="font-bold mb-4">עדכון תמונות ותבניות</h4>
-                        <p class="text-xs text-gray-500 mb-6">העלי עיצובים חדשים לתיקיית האתר והם יתעדכנו כאן.</p>
-                        <input type="file" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-charcoal file:text-white hover:file:bg-sand">
+                    <div class="bg-offwhite p-10 rounded-2xl border-2 border-dashed border-gray-200 text-center">
+                        <i class="fas fa-cloud-upload-alt text-4xl text-gray-300 mb-4"></i>
+                        <h4 class="font-bold mb-2">העלאת תכנים לאתר</h4>
+                        <p class="text-xs text-gray-400 mb-6 italic">תמונות חדשות מהקליניקה או סרטוני הדרכה</p>
+                        <input type="file" class="hidden" id="fileUpload">
+                        <label for="fileUpload" class="bg-charcoal text-white px-8 py-3 rounded text-xs font-bold cursor-pointer hover:bg-sand hover:text-charcoal transition uppercase">Select Files</label>
                     </div>
                 </div>
             </div>
 
             <div id="ai" class="tab-content">
-                <div class="bg-charcoal text-white p-10 rounded-2xl">
-                    <h3 class="font-serif text-2xl mb-4 text-sand italic">AI Creative Engine</h3>
-                    <p class="text-sm text-gray-400 mb-6">צריכה רעיון לסילבוס קורס או לפוסט באינסטגרם?</p>
-                    <textarea class="w-full bg-white/10 border border-white/20 p-4 rounded-lg text-sm mb-4" rows="4" placeholder="תכתוב לי רעיון למבצע שיווקי לקורס שפתיים..."></textarea>
-                    <button class="bg-sand text-charcoal px-8 py-3 rounded font-bold text-xs uppercase tracking-widest">Generate Idea</button>
+                <div class="bg-charcoal text-white p-12 rounded-3xl relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h3 class="font-serif text-3xl mb-4 text-sand">AI Marketing Generator</h3>
+                        <p class="text-sm text-gray-400 mb-8 max-w-lg">הזיני נושא וקבלי רעיונות לסטורי, פוסטים או סילבוס לקורס בתוך שניות.</p>
+                        <textarea class="w-full bg-white/5 border border-white/10 p-6 rounded-xl text-sand focus:outline-none focus:border-sand mb-6" rows="4" placeholder="למשל: תכתוב לי 3 רעיונות לסטורי שיווקי לקורס שפתיים..."></textarea>
+                        <button class="bg-sand text-charcoal px-12 py-4 rounded font-bold text-xs uppercase tracking-[0.2em] hover:bg-white transition">Generate Magic</button>
+                    </div>
+                    <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-sand/10 rounded-full blur-3xl"></div>
                 </div>
             </div>
 
             <div id="studentArea" class="tab-content">
-                <h3 class="font-serif text-2xl mb-6">הקורסים שלי</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white p-6 border rounded-xl flex justify-between items-center">
+                <h3 class="font-serif text-3xl mb-8">הקורסים הדיגיטליים שלי</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 border rounded-2xl flex justify-between items-center shadow-sm">
                         <div>
-                            <p class="font-bold">יסודות האיפור הקבוע</p>
-                            <p class="text-xs text-green-500 italic">פתוח לצפייה</p>
+                            <p class="font-bold text-lg mb-1">שיטת השערה - שלב א'</p>
+                            <p class="text-xs text-green-500 font-bold uppercase tracking-widest">מנוי פעיל</p>
                         </div>
-                        <i class="fas fa-play-circle text-2xl text-sand"></i>
+                        <button class="bg-charcoal text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-sand hover:text-charcoal transition"><i class="fas fa-play"></i></button>
                     </div>
-                    <div class="bg-gray-50 p-6 border border-dashed rounded-xl flex justify-between items-center opacity-60">
-                        <div>
-                            <p class="font-bold">Masterclass - אקוורל שפתיים</p>
-                            <p class="text-xs text-red-400">דרוש מנוי פרימיום</p>
-                        </div>
-                        <i class="fas fa-lock text-xl"></i>
-                    </div>
-                </div>
-                <div class="mt-12 p-8 bg-sand/10 border border-sand rounded-xl text-center">
-                    <h4 class="font-bold mb-2">רוצה להשתדרג אצל אופיר?</h4>
-                    <p class="text-sm mb-6">מנוי פרימיום נותן לך גישה לכל הקורסים וליווי אישי.</p>
-                    <button class="bg-charcoal text-white px-8 py-3 rounded text-xs">שדרגי עכשיו</button>
                 </div>
             </div>
 
@@ -182,26 +182,37 @@
     </div>
 
     <footer class="py-20 bg-white border-t text-center">
-        <h2 class="font-serif text-2xl mb-6">OFIR SWISA BEAUTY ACADEMY</h2>
-        <p class="text-[10px] tracking-[0.4em] uppercase text-gray-400">© 2026 Crafted for Professional Artists</p>
+        <div class="flex flex-col items-center">
+            <h2 class="font-serif text-2xl mb-4 uppercase tracking-tighter">Ofir Swisa Beauty Academy</h2>
+            <div class="flex gap-6 mb-8 text-gray-400">
+                <a href="https://instagram.com/ofirswisa" class="hover:text-charcoal transition"><i class="fab fa-instagram"></i></a>
+                <a href="tel:0502060849" class="hover:text-charcoal transition"><i class="fas fa-phone"></i></a>
+            </div>
+            <p class="text-[10px] tracking-[0.5em] uppercase text-gray-300">© 2026 Crafted for Professional Artists</p>
+        </div>
     </footer>
 
     <script>
         // Preloader
         window.onload = () => { 
-            setTimeout(() => document.getElementById('preloader').style.display = 'none', 1000); 
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(() => document.getElementById('preloader').style.display = 'none', 800);
+            }, 1000); 
         };
 
-        // Login Logic
+        // Login Portal
         function openLogin() {
             Swal.fire({
-                title: 'LOGIN',
+                title: 'PORTAL LOGIN',
                 html: `
-                    <input type="text" id="u" class="swal2-input" placeholder="User">
-                    <input type="password" id="p" class="swal2-input" placeholder="Password">
+                    <div class="flex flex-col gap-4 py-4">
+                        <input type="text" id="u" class="swal2-input !m-0" placeholder="Username">
+                        <input type="password" id="p" class="swal2-input !m-0" placeholder="Password">
+                    </div>
                 `,
-                confirmButtonText: 'Enter',
-                customClass: { confirmButton: 'bg-charcoal text-white px-10' },
+                confirmButtonText: 'Sign In',
+                customClass: { confirmButton: 'bg-charcoal text-white px-12 py-3 rounded-none text-xs tracking-widest' },
                 preConfirm: () => {
                     const u = document.getElementById('u').value;
                     const p = document.getElementById('p').value;
@@ -217,7 +228,7 @@
                     
                     if(r.value === 'student') {
                         document.getElementById('panelTitle').innerText = 'שלום, סטודנטית';
-                        document.getElementById('panelSub').innerText = 'Student Portal';
+                        document.getElementById('panelSub').innerText = 'Academy Student Portal';
                         document.getElementById('adminTabs').style.display = 'none';
                         document.getElementById('leads').classList.remove('active');
                         document.getElementById('studentArea').classList.add('active');
@@ -229,14 +240,17 @@
         function closeAdmin() { 
             document.getElementById('adminPanel').style.display = 'none'; 
             document.body.style.overflow = 'auto';
+            location.reload(); // Refresh to clear state
         }
 
         function showTab(id) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.add('text-gray-400', 'border-transparent'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.add('text-gray-400'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('border-b-2', 'border-charcoal'));
+            
             document.getElementById(id).classList.add('active');
             event.currentTarget.classList.remove('text-gray-400');
-            event.currentTarget.classList.add('border-charcoal');
+            event.currentTarget.classList.add('border-b-2', 'border-charcoal');
         }
     </script>
 </body>
