@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>OFIR SWISA | Beauty Academy Admin & Studio</title>
+    <meta name="description" content="אקדמיית היופי של אופיר סוויסה - קורסי איפור קבוע, עיצוב גבות וניהול קריירה ביוטי.">
+    <meta name="keywords" content="אופיר סוויסה, לימודי איפור קבוע, שיטת השערה, קורס גבות, אקוורל שפתיים, ניהול עסק ביוטי">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Prata&family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { sand: '#DCCFC6', charcoal: '#1A1A1A', offwhite: '#F9F9F9' },
+                    fontFamily: { sans: ['Heebo', 'sans-serif'], serif: ['Prata', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F9F9F9; color: #1A1A1A; overflow-x: hidden; scroll-behavior: smooth; }
+        .couture-img { transition: transform 0.8s ease; filter: grayscale(100%); }
+        .couture-card:hover .couture-img { transform: scale(1.05); filter: grayscale(0%); }
+        .admin-panel { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fdfdfd; z-index: 1000; overflow-y: auto; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="font-sans">
+
+    <div id="preloader" class="fixed inset-0 bg-charcoal z-[9999] flex justify-center items-center">
+        <h1 class="font-serif text-4xl text-sand tracking-widest animate-pulse">OFIR SWISA</h1>
+    </div>
+
+    <nav class="fixed w-full z-50 px-8 py-5 flex justify-between items-center bg-white/90 backdrop-blur-md border-b">
+        <div class="flex flex-col">
+            <span class="font-serif text-2xl tracking-tighter">OFIR SWISA</span>
+            <span class="text-[10px] tracking-[0.3em] text-gray-400 uppercase">Beauty Academy</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-xs font-bold uppercase items-center">
+            <a href="#collection" class="hover:text-sand">Collection</a>
+            <button onclick="openLogin()" class="bg-charcoal text-white px-5 py-2 hover:bg-sand hover:text-charcoal transition">Login</button>
+        </div>
+    </nav>
+
+    <header class="min-h-screen flex items-center px-6 md:px-24 pt-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="font-serif text-6xl md:text-8xl mb-6">THE NEW<br><span class="italic text-sand">STANDARD.</span></h1>
+                <p class="text-xl text-gray-500 mb-8">ניהול תוכן, לימודים ויופי במקום אחד.</p>
+                <a href="tel:0502060849" class="border border-charcoal px-10 py-4 inline-block font-bold text-xs tracking-widest hover:bg-charcoal hover:text-white transition">BOOK NOW</a>
+            </div>
+            <div class="h-[60vh] overflow-hidden shadow-2xl">
+                <img src="hero-brows.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-1000">
+            </div>
+        </div>
+    </header>
+
+    <div id="adminPanel" class="admin-panel p-6 md:p-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center border-b pb-8 mb-8">
+                <h2 class="font-serif text-3xl">ניהול מערכת - אופיר סוויסה</h2>
+                <button onclick="closeAdmin()" class="bg-red-500 text-white px-4 py-2 rounded">יציאה</button>
+            </div>
+
+            <div class="flex gap-4 mb-8 border-b overflow-x-auto pb-2">
+                <button onclick="showTab('leads')" class="tab-btn font-bold text-sm pb-2 border-b-2 border-charcoal">לידים והודעות</button>
+                <button onclick="showTab('content')" class="tab-btn font-bold text-sm pb-2 text-gray-400">ניהול תוכן ותבניות</button>
+                <button onclick="showTab('ai')" class="tab-btn font-bold text-sm pb-2 text-gray-400">רעיונות ו-AI</button>
+            </div>
+
+            <div id="leads" class="tab-content active">
+                <h3 class="font-bold mb-4">בנות שנרשמו (לידים חדשים)</h3>
+                <div class="bg-white border rounded-lg overflow-hidden">
+                    <table class="w-full text-right text-sm">
+                        <thead class="bg-gray-50 border-b">
+                            <tr>
+                                <th class="p-4">שם המועמדת</th>
+                                <th class="p-4">טלפון</th>
+                                <th class="p-4">עניין בקורס</th>
+                                <th class="p-4">פעולות</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="p-4">מעיין לוי</td>
+                                <td class="p-4">052-1234567</td>
+                                <td class="p-4">קורס גבות פרימיום</td>
+                                <td class="p-4 flex gap-2">
+                                    <button onclick="window.open('https://wa.me/972521234567')" class="bg-green-500 text-white p-2 rounded text-xs">WhatsApp</button>
+                                    <button class="bg-blue-500 text-white p-2 rounded text-xs">שלחי מייל</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="content" class="tab-content">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 border rounded-lg">
+                        <h4 class="font-bold mb-4">בחירת טמפלייט לאתר</h4>
+                        <select class="w-full p-3 border rounded mb-4">
+                            <option>Classic Luxury (Current)</option>
+                            <option>Modern Dark Mode</option>
+                            <option>Minimalist White</option>
+                        </select>
+                        <p class="text-xs text-gray-400">שינוי הטמפלייט יעדכן את הפונטים והצבעים בכל האתר באופן אוטומטי.</p>
+                    </div>
+                    <div class="bg-white p-6 border rounded-lg">
+                        <h4 class="font-bold mb-4">העלאת תוכן חדש</h4>
+                        <input type="file" class="w-full p-2 border border-dashed rounded mb-4">
+                        <button class="w-full bg-charcoal text-white py-3">עדכן את האתר</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ai" class="tab-content">
+                <div class="bg-charcoal text-white p-8 rounded-xl">
+                    <h3 class="font-serif text-2xl mb-4 text-sand">מחולל רעיונות לקורסים (AI)</h3>
+                    <p class="text-sm mb-6">ה-AI מחובר למערכת ויכול להציע לך סילבוס או רעיון לסטורי.</p>
+                    <textarea class="w-full bg-white/10 p-4 rounded mb-4 border border-white/20" rows="4" placeholder="למשל: תכתוב לי 3 רעיונות לסטורי שיווקי לקורס שפתיים..."></textarea>
+                    <button class="bg-sand text-charcoal px-8 py-3 font-bold rounded">ייצר רעיון</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Preloader
+        window.onload = () => { 
+            setTimeout(() => document.getElementById('preloader').style.display = 'none', 1000); 
+        };
+
+        // Admin Auth
+        function openLogin() {
+            Swal.fire({
+                title: 'כניסת מנהלת',
+                html: `<input type="text" id="u" class="swal2-input" placeholder="User"><input type="password" id="p" class="swal2-input" placeholder="Pass">`,
+                preConfirm: () => {
+                    if (document.getElementById('u').value === 'ofir' && document.getElementById('p').value === '1234') return true;
+                    Swal.showValidationMessage('פרטים שגויים');
+                }
+            }).then(r => { 
+                if(r.isConfirmed) {
+                    document.getElementById('adminPanel').style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        }
+
+        function closeAdmin() { 
+            document.getElementById('adminPanel').style.display = 'none'; 
+            document.body.style.overflow = 'auto';
+        }
+
+        // Tabs Logic
+        function showTab(id) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.add('text-gray-400', 'border-transparent'));
+            document.getElementById(id).classList.add('active');
+            event.currentTarget.classList.remove('text-gray-400');
+            event.currentTarget.classList.add('border-charcoal');
+        }
+    </script>
+</body>
+</html>
